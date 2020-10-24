@@ -1,2 +1,3 @@
-# hello-world-template
-The template repository for the hello-world course on Learning Lab.
+# hello world!
+
+A simple test to see how does git/github work.
