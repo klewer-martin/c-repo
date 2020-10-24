@@ -1,3 +1,6 @@
-# hello world!
+# Hello world!
 
-A simple test to see how does git/github work.
+
+This is a repository to store all my C files while i learn about this new language, 
+
+Feel free to take a look.
