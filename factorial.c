@@ -6,11 +6,11 @@ int main(void) {
 	
 	int fact, i, res;
 
-	printf("Ingrese un numero: ");
+	printf("Enter a number: ");
 	scanf("%i", &fact);			// future update, delete this unsecure function 
 
 	if(fact < 0) {
-		printf("Numero invalido\n");
+		printf("Enter a valid number!\n");
 		return 1;
 	}
 
