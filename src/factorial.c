@@ -15,7 +15,7 @@ int main(void) {
 	}
 
 	res = 1;
-	for(i = 1; 1 <= fact; i++) {
+	for(i = 1; i <= fact; i++) {
 		res =* i;
 	}
 
