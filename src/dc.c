@@ -10,7 +10,7 @@ typedef enum {
 } escala_t;
 
 typedef float dato_t;	//	this statement is not practical at all
-						//	but was part of the intro to typedef
+			//	but was part of the intro to typedef
 
 char s[10];
 
