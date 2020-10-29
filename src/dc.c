@@ -9,15 +9,16 @@ typedef enum {
 	CELSIUS
 } escala_t;
 
-typedef float dato_t;
+typedef float dato_t;	//	this statement is not practical at all
+						//	but was part of the intro to typedef
 
 char s[10];
 
-float ftoc(dato_t fahrenheit) {
+dato_t ftoc(dato_t fahrenheit) {
 	return (((fahrenheit - 32)*5)/9);
 }
 
-float ctof(dato_t celsius) {
+dato_t ctof(dato_t celsius) {
 	return (((celsius * 9)/5) + 32);
 }
 
@@ -55,7 +56,7 @@ int main(void)
 	if(c == FAHRENHEIT) {
 		title_ftoc();
 		dato_t i;
-		float res;
+		dato_t res;
 		while(fgets(s, 10, stdin) != NULL) {
 			i = atoi(s);
 			res = ftoc(i);
@@ -65,7 +66,7 @@ int main(void)
 	} else if(c == CELSIUS) {
 		title_ctof();
 		dato_t i;
-		float res;
+		dato_t res;
 		while(fgets(s, 10, stdin) != NULL) {
 			i = atoi(s);
 			res = ctof(i);
