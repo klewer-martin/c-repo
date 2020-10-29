@@ -1,3 +1,6 @@
+/*	Ejercicio 4 - Guia 2, Algoritmos y Programacion I - FIUBA	*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
