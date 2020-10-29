@@ -27,15 +27,6 @@ void title()
 
 int main(void)
 {
-	
-/*	printf("---------------------------------------\n");
-	printf("---------------------------------------\n");
-	printf("--- FAHRENHEIT TO CELSIUS CONVERTER ---\n");
-	printf("---------------------------------------\n");
-	printf("---      to exit press Ctrl+D      ----\n");
-	printf("---------------------------------------\n");
-	printf("---------------------------------------\n");
-*/
 	title();
 	dato_t i;
 	float res;
