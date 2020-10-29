@@ -16,7 +16,7 @@ int main(void) {
 
 	res = 1;
 	for(i = 1; 1 <= fact; i++) {
-		res = res * i;
+		res =* i;
 	}
 
 	printf("%d! = %d\n", fact, res);
