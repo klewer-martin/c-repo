@@ -41,6 +41,7 @@ void cursor() {
 	printf(">> ");
 }
 
+
 int main(void)
 {
 	char buffer[MAX_INP_LEN];
@@ -53,7 +54,7 @@ int main(void)
 	if(c == FAHRENHEIT) {
 		title(FAHRENHEIT);
 		while(fgets(buffer, MAX_INP_LEN, stdin) != NULL) {
-			i = atoi(s);
+			i = atoi(buffer);
 			res = ftoc(i);
 			printf("%.0f°F = %.2f°C\n", i, res);
 			cursor();
@@ -61,7 +62,7 @@ int main(void)
 	} else if(c == CELSIUS) {
 		title(CELSIUS);
 		while(fgets(buffer, MAX_INP_LEN, stdin) != NULL) {
-			i = atoi(s);
+			i = atoi(buffer);
 			res = ctof(i);
 			printf("%.0f°C = %.2f°F\n", i, res);
 			cursor();
