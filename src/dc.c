@@ -22,58 +22,51 @@ dato_t ctof(dato_t celsius) {
 	return (((celsius * 9)/5) + 32);
 }
 
-void title_ftoc()
+void title(int i)
 {
-	printf("---------------------------------------\n");
-	printf("---------------------------------------\n");
-	printf("--- FAHRENHEIT TO CELSIUS CONVERTER ---\n");
-	printf("---------------------------------------\n");
-	printf("---      to exit press Ctrl+D      ----\n");
-	printf("---------------------------------------\n");
-	printf("---------------------------------------\n");
+	printf(
+		"---------------------------------------\n"
+		"---------------------------------------\n"
+		"--- FAHRENHEIT TO CELSIUS CONVERTER ---\n"
+		"---------------------------------------\n"
+		"---      to exit press Ctrl+D      ----\n"
+		"---------------------------------------\n"
+		"---------------------------------------\n",
+		i ? "FAHRENHEIT" : "CELSIUS",
+		i ? "CELSIUS" : "FAHRENHEIT"
+	);
 }
 
-void title_ctof()
-{
-	printf("---------------------------------------\n");
-	printf("---------------------------------------\n");
-	printf("--- CELCIUS TO FAHRENHEIT CONVERTER ---\n");
-	printf("---------------------------------------\n");
-	printf("---      to exit press Ctrl+D      ----\n");
-	printf("---------------------------------------\n");
-	printf("---------------------------------------\n");
+void cursor() {
+	printf(">> ");
 }
-
 
 int main(void)
 {
 	escala_t c;
+	dato_t i, res;
 	printf("0 - FAHRENHEIT TO CELSIUS\n");
 	printf("1 - CELSIUS TO FAHRENHEIT\n");
-	printf(">> ");
-	c = getchar();
-	c -= '0';
+	cursor();
+	c = getchar() - '0';
 	if(c == FAHRENHEIT) {
-		title_ftoc();
-		dato_t i;
-		dato_t res;
+		title(FAHRENHEIT);
 		while(fgets(s, 10, stdin) != NULL) {
 			i = atoi(s);
 			res = ftoc(i);
 			printf("%.0f°F = %.2f°C\n", i, res);
-			printf(">> ");
+			cursor();
 		}
 	} else if(c == CELSIUS) {
-		title_ctof();
-		dato_t i;
-		dato_t res;
+		title(CELSIUS);
 		while(fgets(s, 10, stdin) != NULL) {
 			i = atoi(s);
 			res = ctof(i);
 			printf("%.0f°C = %.2f°F\n", i, res);
-			printf(">> ");
+			cursor();
 		}
 	}
+	printf("\n");
 	return 0;
 }
 
