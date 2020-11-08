@@ -27,13 +27,13 @@ void title(int i)
 	printf(
 		"---------------------------------------\n"
 		"---------------------------------------\n"
-		"--- FAHRENHEIT TO CELSIUS CONVERTER ---\n"
+		"--- %s TO %s CONVERTER ---\n"
 		"---------------------------------------\n"
 		"---      to exit press Ctrl+D      ----\n"
 		"---------------------------------------\n"
 		"---------------------------------------\n",
-		i ? "FAHRENHEIT" : "CELSIUS",
-		i ? "CELSIUS" : "FAHRENHEIT"
+		i ? "CELSIUS" : "FAHRENHEIT",
+		i ? "FAHRENHEIT" : "CELSIUS"
 	);
 }
 
