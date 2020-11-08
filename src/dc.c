@@ -4,15 +4,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MAX_INP_LEN 10
+
 typedef enum {
 	FAHRENHEIT,
 	CELSIUS
 } escala_t;
 
 typedef float dato_t;	//	this statement is not practical at all
-			//	but was part of the intro to typedef
-
-char s[10];
+						//	but was part of the intro to typedef
 
 dato_t ftoc(dato_t fahrenheit) {
 	return (((fahrenheit - 32)*5)/9);
@@ -43,6 +43,7 @@ void cursor() {
 
 int main(void)
 {
+	char buffer[MAX_INP_LEN];
 	escala_t c;
 	dato_t i, res;
 	printf("0 - FAHRENHEIT TO CELSIUS\n");
@@ -51,7 +52,7 @@ int main(void)
 	c = getchar() - '0';
 	if(c == FAHRENHEIT) {
 		title(FAHRENHEIT);
-		while(fgets(s, 10, stdin) != NULL) {
+		while(fgets(buffer, MAX_INP_LEN, stdin) != NULL) {
 			i = atoi(s);
 			res = ftoc(i);
 			printf("%.0f°F = %.2f°C\n", i, res);
@@ -59,7 +60,7 @@ int main(void)
 		}
 	} else if(c == CELSIUS) {
 		title(CELSIUS);
-		while(fgets(s, 10, stdin) != NULL) {
+		while(fgets(buffer, MAX_INP_LEN, stdin) != NULL) {
 			i = atoi(s);
 			res = ctof(i);
 			printf("%.0f°C = %.2f°F\n", i, res);
