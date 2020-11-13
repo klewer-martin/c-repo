@@ -6,6 +6,7 @@ The examples and exercies are taken from the book "The C programming language" -
 and from my University workbook.
 
 In "c-repo/src" you can find all the source codes.
+In "c-repo/src/guia0*/" you can find exercises taken from 'guia02.pdf'
 
 Please consider that I've never programmed in my life before more than blinking
 a led with Arduino® lol.
