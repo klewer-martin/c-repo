@@ -10,8 +10,8 @@
 #define TRD_YR 143
 
 typedef enum {
-	AGUDO, OBTUSO, RECTO
-} angulo_t;
+	FIRST, SECOND, THIRD
+} year_t;
 
 
 void clean(char *buffer)
@@ -25,7 +25,8 @@ int main(void) {
 	
 	char buffer[MAX_LEN];
 	clean(buffer);
-	int c, d, e, i;
+	int c, d, i;
+	year_t e;
 	i = 0;		
 	while(((c = getchar()) != EOF) && c != '\n') {
 		if(i < MAX_LEN) {
@@ -38,24 +39,24 @@ int main(void) {
 	}
 	d = atoi(buffer);
 
-	if (d < FST_YR)
-		e = AGUDO;
-	else if (d > )
-		e = RECTO;
-	else if (d > 90)
-		e = OBTUSO;
+	if (d <= FST_YR)
+		e = FIRST;
+	else if (d > FST_YR && d <= TRD_YR)
+		e = SECOND;
+	else if (d > TRD_YR)
+		e = THIRD;
 
 
 	switch (e)
 	{
-		case AGUDO:
-			printf("El angulo es AGUDO\n");
+		case FIRST:
+			printf("Primer año\n");
 			break;
-		case RECTO:
-			printf("El angulo es RECTO\n");
+		case SECOND:
+			printf("Segundo año\n");
 			break;
-		case OBTUSO:
-			printf("El angulo es OBTUSO\n");
+		case THIRD:
+			printf("Tercer año o superior\n");
 			break;
 	}
 	return 0;
