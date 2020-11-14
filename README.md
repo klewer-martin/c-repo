@@ -7,7 +7,7 @@ and from my University workbook.
 
 In "c-repo/src" you can find all the source codes.
 
-In "c-repo/src/guia0*/" you can find exercises taken from 'guia02.pdf'
+In "c-repo/guia0*/" you can find exercises taken from 'c-repo/guia0*/guia0*.pdf'
 
 Please consider that I've never programmed in my life before more than blinking
 a led with Arduino® lol.
