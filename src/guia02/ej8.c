@@ -9,8 +9,9 @@
 #define SND_YR 95
 #define TRD_YR 143
 
+
 typedef enum {
-	FIRST, SECOND, THIRD
+	FIRST, SECOND, THIRD, FOURTH
 } year_t;
 
 
@@ -39,12 +40,14 @@ int main(void) {
 	}
 	d = atoi(buffer);
 
-	if (d <= FST_YR)
+	if (d <= FST_YR) 
 		e = FIRST;
-	else if (d > FST_YR && d <= TRD_YR)
+	else if ((d > FST_YR) && (d <= SND_YR))
 		e = SECOND;
-	else if (d > TRD_YR)
+	else if ((d > SND_YR) && d <= (TRD_YR))
 		e = THIRD;
+	else if (d > TRD_YR) 
+		e = FOURTH;
 
 
 	switch (e)
@@ -56,7 +59,10 @@ int main(void) {
 			printf("Segundo año\n");
 			break;
 		case THIRD:
-			printf("Tercer año o superior\n");
+			printf("Tercer año\n");
+			break;
+		case FOURTH:
+			printf("Curto año o superior\n");
 			break;
 	}
 	return 0;
