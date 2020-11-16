@@ -22,9 +22,15 @@ typedef enum {
 	FIRST, SECOND, THIRD, FOURTH
 } year_t;
 
+typedef enum {
+	ERROR, OK
+} status_t;
 
-void clean(char *buffer)
+status_t clean(char *buffer)
 {
+	if(buffer == NULL)
+		return ERROR;
+
 	for(size_t i = 0; i < MAX_LEN; i++)
 		buffer[i] = '\0';
 }
