@@ -4,58 +4,58 @@ typedef enum {
 	JAN, FEB, MAR, APR, MAY, JUN, JUL, AGO, SEP, OCT, NOV, DEC
 } mes_t;
 
-#define JANUARY		"ENERO\n"
-#define FEBRUARY	"FEBRERO\n"
-#define MARCH 		"MARZO\n"
-#define APRIL		"ABRIL\n"
-#define MAYO		"MAYO\n"
-#define JUNE		"JUNIO\n"
-#define JULY		"JULIO\n"
-#define AUGUST		"AGOSTO\n"
-#define SEPTEMBER	"SEPTIEMBRE\n"
-#define OCTOBER		"OCTUBRE\n"
-#define NOVEMBER	"NOVIEMBRE\n"
-#define DECEMBER	"DICIEMBRE\n"
+#define JANUARY		"ENERO"
+#define FEBRUARY	"FEBRERO"
+#define MARCH 		"MARZO"
+#define APRIL		"ABRIL"
+#define MAYO		"MAYO"
+#define JUNE		"JUNIO"
+#define JULY		"JULIO"
+#define AUGUST		"AGOSTO"
+#define SEPTEMBER	"SEPTIEMBRE"
+#define OCTOBER		"OCTUBRE"
+#define NOVEMBER	"NOVIEMBRE"
+#define DECEMBER	"DICIEMBRE"
 
 int main(void) {
 	mes_t mes = NOV;
 	switch(mes)
 	{
 		case JAN:
-			printf(JANUARY);
+			printf(JANUARY"\n");
 			break;
 		case FEB:
-			printf(FEBRUARY);
+			printf(FEBRUARY"\n");
 			break;
 		case MAR:
-			printf(MARCH);
+			printf(MARCH"\n");
 			break;
 		case APR:
-			printf(APRIL);
+			printf(APRIL"\n");
 			break;
 		case MAY:
-			printf(MAYO);
+			printf(MAYO"\n");
 			break;
 		case JUN:
-			printf(JUNE);
+			printf(JUNE"\n");
 			break;
 		case JUL:
-			printf(JULY);
+			printf(JULY"\n");
 			break;
 		case AGO:
-			printf(AUGUST);
+			printf(AUGUST"\n");
 			break;
 		case SEP:
-			printf(SEPTEMBER);
+			printf(SEPTEMBER"\n");
 			break;
 		case OCT:
-			printf(OCTOBER);
+			printf(OCTOBER"\n");
 			break;
 		case NOV:
-			printf(NOVEMBER);
+			printf(NOVEMBER"\n");
 			break;
 		case DEC:
-			printf(DECEMBER);
+			printf(DECEMBER"\n");
 			break;
 	}	
 	return 0;
