@@ -2,8 +2,12 @@
 #include <string.h>
 
 size_t str_len(const char *str) {
+	if(str == NULL)
+		return 1;
+
 	size_t i;
-	for(i = 0; str[i] != '\0'; i++) {}
+	for(i = 0; str[i] != '\0'; i++)
+		; 
 
 	return i;
 }
