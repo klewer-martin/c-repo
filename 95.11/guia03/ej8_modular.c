@@ -1,5 +1,11 @@
+/*	Makes a lexicographical comparison between two strings	*/
+/*	similar to strlen() function from <string.h>			*/
+
 #include <stdio.h>
 
+
+/*	This function calculates the length of given string
+	and returns it by its name								*/
 size_t str_len(const char *str) {
 	if(str == NULL)
 		return 1;
@@ -10,6 +16,8 @@ size_t str_len(const char *str) {
 	return i;
 }
 
+/*	This function is equivalent to strlen() function from	
+	<string.h> library										*/
 int str_cmp(const char *str1, const char *str2) { 
 	if(str1 == NULL || str2 == NULL)
 		return 1;
