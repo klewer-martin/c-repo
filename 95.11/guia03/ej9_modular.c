@@ -1,6 +1,14 @@
+/*  Makes a lexicographical comparison between the first n	*/
+/*	numbers of two given strings							*/
+/*	similar to strncmp() function from <string.h>			*/
+
 #include <stdio.h>
 
-size_t str_len(const char *str) {
+/*	This function calculates the length of given string
+    and returns it by its name, equivalent to strlen()		
+	function from <string.h> library						*/
+size_t str_len(const char *str)
+{
 	if(str == NULL)
 		return 1;
 
@@ -11,7 +19,10 @@ size_t str_len(const char *str) {
 	return i;
 }
 
-int str_cmp(const char *str1, const char *str2, size_t n) { 
+/*  This function is equivalent to strncmp() function from   
+    <string.h> library                                      */
+int str_cmp(const char *str1, const char *str2, size_t n)
+{ 
 	if(str1 == NULL || str2 == NULL)
 		return 1;
 
@@ -28,12 +39,10 @@ int str_cmp(const char *str1, const char *str2, size_t n) {
 		aux2 = str2[i];
 		if(aux1 < aux2) {
 			cmp -= (aux2 - aux1);
-		} else 
-			if (aux1 > aux2) {
+		} else if (aux1 > aux2) {
 				cmp += (aux1 - aux2);
 			}
 	}
-
 	return cmp;
 }
 
