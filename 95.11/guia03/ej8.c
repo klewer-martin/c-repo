@@ -8,8 +8,6 @@ size_t str_len(const char *str) {
 	return i;
 }
 
-int str_cmp(const char *str1, const char *str2); 
-
 int main(void) {
 
 	char s1[] = "ABC";
