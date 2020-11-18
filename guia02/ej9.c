@@ -23,7 +23,7 @@ typedef enum {
 } year_t;
 
 typedef enum {
-	ERROR, OK
+	OK, ERROR
 } status_t;
 
 status_t clean(char *buffer)
@@ -33,6 +33,8 @@ status_t clean(char *buffer)
 
 	for(size_t i = 0; i < MAX_LEN; i++)
 		buffer[i] = '\0';
+	
+	return OK;
 }
 
 
@@ -45,7 +47,8 @@ int main(void) {
 	i = 0;		
 	
 	/*	Cleaning buffer in case it contains a random number	*/ 
-	clean(buffer);
+	if(clean(buffer) == ERROR)
+		return ERROR;
 	
 	/*	Reading one char from stdin and storing it on a buffer until EOF	*/
 	while(((c = getchar()) != EOF) && c != '\n') {
@@ -61,7 +64,8 @@ int main(void) {
 	/*	Converting the first portion of buffer to int with atoi() 
 		and cleaning the buffer	*/
 	credits = atoi(buffer);
-	clean(buffer);
+	if(clean(buffer) == ERROR)
+		return ERROR;
 
 	/*	Checks if credits is a valid number	*/
 	if(credits < 0) {
@@ -95,7 +99,7 @@ int main(void) {
 			printf(FTH_MSG"\n");
 			break;
 	}
-	return 0;
+	return OK;
 }
 
 
