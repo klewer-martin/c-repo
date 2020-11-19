@@ -1,3 +1,7 @@
+//	Reads a string from stdin and converts it to uppercase or lowercase 
+//	depending on an option readed from stdin
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
