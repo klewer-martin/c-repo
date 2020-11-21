@@ -2,7 +2,7 @@
 
 This is a repository to store all my C files while I learn about this new language.
 
-In src/ you can find modified source code taken from the book:
+In the-c-programming-language/ you can solutions to exercices taken from the book:
 "The C programming language" - written by Brian W. Kernighan & Dennis M. Ritchie.
 
 In "c-repo/95.11" you can find "Algoritmos y programacion I" (cod. 95.11) homework,
