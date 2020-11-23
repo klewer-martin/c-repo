@@ -1,41 +1,21 @@
 #include <stdio.h>
-#include <string.h>
 
 #define MAX_LEN 100
 
-typedef enum {
-	OK, ERROR
-} status_t;
+int main(void) {
 
-//	status_t left_trim(str);
+	int i, j;
+	char str[MAX_LEN];
 
-int main( void ) {
+	fgets(str, MAX_LEN, stdin);
 
-	char buffer[MAX_LEN];
-	int i, j, len;
+	j = 0;
+	while(str[j] == ' ')
+			j++;
 
-	if((fgets(buffer, MAX_LEN, stdin)) == NULL)
-		return ERROR;
-
-	len = strlen(buffer);
-	printf("%d\n", len);
-
-	char str[len - 1];
-	char aux;
-
-	for(i = 0; buffer[i] == ' '; i++) {
-		//for(j = 0; buffer[j] == ' '; j++)
-		//	str[i] = buffer[j];
-		//	printf("for\n");
-		str[i] = buffer[i];
-		if(buffer[i] == ' ') {
-			str[i] = buffer[i + 1];
-			i++;
-		}
-		//str[i] = buffer[j];
+	for(i = 0; str[i] != '\0'; i++) {
+		str[i] = str[i + j];
 	}
-	
-	printf("%s\n", str);
-
-	return OK;
+	puts(str);
+	return 0;
 }
