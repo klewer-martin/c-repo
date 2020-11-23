@@ -11,7 +11,7 @@ int main(void) {
 
 	j = 0;
 	while(str[j] == ' ')
-			j++;
+		j++;
 
 	for(i = 0; str[i] != '\0'; i++) {
 		str[i] = str[i + j];
