@@ -1,3 +1,6 @@
+//	Reads a string of chars from stdin and check if it's
+//	a palindrome.
+
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -13,42 +16,41 @@ int main ( void ) {
 	if(fgets(str, MAX_LEN, stdin) == NULL)
 		return 1;
 
-//	Pasa todo a minuscula;
+//	Converts all the string to lowercase;
 	for(i = 0; str[i] != '\0'; i++)
 		if(isupper(str[i]))
 			str[i] = tolower(str[i]);
 
-//	En caso de ser una oracion elimina los espacios en blanco;
+//	If the readed string it's a sentence erases all
+//	the blank spaces;
 	for(i = 0; str[i] != '\0'; i++) {
 		if(str[i] == ' ') {
 			aux = i;
-			while(str[i] != '\0') {
-				str[i] = str[i + 1];
-				i++;
+			while(str[aux] != '\0') {
+				str[aux] = str[aux + 1];
+				aux++;
 			}
-			i = aux;
 		}
 	}
 
-//	Asigna a i el valor de el ultimo caracter;
+//	Counts the length of the string;
 	for(i = 0; str[i] != '\n'; i++)
 		;
 
-//	Le restamos uno a i, ya que en la parte anterior
-//	i es el indice de el caracter '\n';
+//	We subtract one from i because of the '\n' char;
 	i = i - 1;
 
-//	Esta parte compara uno a uno los caracteres;
-//	primero con ultimo, segundo con anteultimo y
-//	asi sucesivamente;
+//	This part compares one by one the chars from the 
+//	string, first with last, second with before last,
+//	and so on, only comparing the next one if the previous
+//	one was equal;
 	for(j = 0; (str[j] == str[i]) && (str[j] != '\0'); j++, i--)
 		;
 
-//	Si la cadena es efectivamente capicua entonces
-//	en la parte anterior j tiene que haber recorrido toda
-//	la cadena, ya que si los caracteres no eran iguales
-//	j no se incrementa, si la cadena es capicua entonces,
-//	j termino valiendo el largo de la cadena;
+
+//	If the string or sentence its palindrome, then in the previous
+//	block j would end with the value of the total lengh, minus one
+//	because of the last char;
 	if(j == (strlen(str) - 1))
 		printf("La cadena es capicua.\n");
 
