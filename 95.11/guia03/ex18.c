@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <ctype.h>
-#include <string.h>
 
 #define MAX_LEN 100
 
@@ -11,8 +10,8 @@
 int main ( void ) {
 
 	char str[MAX_LEN];
-	int aux, i, j;
-	
+	int aux, len, i, j;
+
 	if(fgets(str, MAX_LEN, stdin) == NULL)
 		return 1;
 
@@ -22,7 +21,7 @@ int main ( void ) {
 			str[i] = tolower(str[i]);
 
 //	If the readed string it's a sentence erases all
-//	the blank spaces;
+//	the blank spaces, between the words;
 	for(i = 0; str[i] != '\0'; i++) {
 		if(str[i] == ' ') {
 			aux = i;
@@ -37,8 +36,10 @@ int main ( void ) {
 	for(i = 0; str[i] != '\n'; i++)
 		;
 
-//	We subtract one from i because of the '\n' char;
-	i = i - 1;
+//	Stored the lengh of the string for later, 
+//	and subtract one from i because of the last char;
+	len = i;
+	i = (i - 1);
 
 //	This part compares one by one the chars from the 
 //	string, first with last, second with before last,
@@ -47,11 +48,10 @@ int main ( void ) {
 	for(j = 0; (str[j] == str[i]) && (str[j] != '\0'); j++, i--)
 		;
 
-
 //	If the string or sentence its palindrome, then in the previous
 //	block j would end with the value of the total lengh, minus one
 //	because of the last char;
-	if(j == (strlen(str) - 1))
+	if(j == len)
 		printf("La cadena es capicua.\n");
 
 	return 0;
