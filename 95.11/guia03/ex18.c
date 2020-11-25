@@ -49,8 +49,7 @@ int main ( void ) {
 		;
 
 //	If the string or sentence its palindrome, then in the previous
-//	block j would end with the value of the total lengh, minus one
-//	because of the last char;
+//	block j would end with the value of the lengh, stored previously;
 	if(j == len)
 		printf("La cadena es capicua.\n");
 
