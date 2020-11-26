@@ -20,8 +20,8 @@ int main ( void ) {
 		if(isupper(str[i]))
 			str[i] = tolower(str[i]);
 
-//	If the readed string it's a sentence erases all
-//	the blank spaces, between the words;
+//	If the readed string it's a sentence, erases all
+//	the blank spaces between the words;
 	for(i = 0; str[i] != '\0'; i++) {
 		if(str[i] == ' ') {
 			aux = i;
