@@ -10,7 +10,7 @@
 
 int main ( void ) {
 
-	int i, r, num, aux;
+	int i, num;
 	char buffer[MAX_LEN];
 //	0000 0000
 	int bin[MAX_LEN] = {0,0,0,0,0,0,0,0};
@@ -30,7 +30,7 @@ int main ( void ) {
 //	by 2 until its zero, the rest of the division
 //	is stored in every itineration in bin[];
 	for(i = 0; num != 0; i++) {
-		if((r = (num % 2)) == 1) {
+		if((num % 2) == 1) {
 			bin[i] = 1;
 		} else {
 			bin[i] = 0;
