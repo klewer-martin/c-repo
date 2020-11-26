@@ -13,8 +13,11 @@ int main ( void ) {
 		return 1;
 
 //	Converts the input str to int;
-	num = atoi(buffer);
-
+	if(	(num = atoi(buffer)) < 0 ) {
+		fprintf(stderr, "Debe ingresar un entero positivo!\n");
+		return 1;
+	}
+	
 //	prints the integer in octal base;
 	printf("%o\n", num);
 	return 0;
