@@ -15,9 +15,10 @@ int main ( void ) {
 	if(fgets(buffer, MAX_LEN, stdin) == NULL)
 		return 1;
 
-//	Converts the input str to int;
+//	Converts the input str to int, if the number
+//	is negative, puts an error message on stderr;
 	if((num = atoi(buffer)) < 0 ) {
-		fprintf(stderr, ERR_MSG_LEN"\n");
+		fprintf(stderr, ERR_MSG_NEG"\n");
 		return 1;
 	}
 	
