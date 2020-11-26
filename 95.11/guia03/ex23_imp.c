@@ -1,20 +1,23 @@
+//	Reads an integer from stdin and prints it
+//	on stdout in octal base; 
+
 #include <stdio.h>
 #include <stdlib.h>
 
 #define MAX_LEN 100
+#define ERR_MSG_NEG "Err: the number is negative"
 
 int main ( void ) {
 
-	char buffer[MAX_LEN];
 	int num;
-	char num2[MAX_LEN];
+	char buffer[MAX_LEN];
 
 	if(fgets(buffer, MAX_LEN, stdin) == NULL)
 		return 1;
 
 //	Converts the input str to int;
-	if(	(num = atoi(buffer)) < 0 ) {
-		fprintf(stderr, "Debe ingresar un entero positivo!\n");
+	if((num = atoi(buffer)) < 0 ) {
+		fprintf(stderr, ERR_MSG_LEN"\n");
 		return 1;
 	}
 	
