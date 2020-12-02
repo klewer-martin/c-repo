@@ -1,6 +1,14 @@
 #include <stdio.h>
 
-unsigned long fact (int num);
+unsigned long fact ( int num ) {
+	unsigned long j, res;
+	res = 1;
+
+	for (j = 1; j <= num; j++) {
+		res = (res * j);
+	}
+	return res;
+}
 
 int main ( void ) {
 
@@ -8,15 +16,3 @@ int main ( void ) {
 
 	return 0;
 }
-
-unsigned long fact (int num) {
-	unsigned long j, res;
-	res = 1;
-
-	for (j = 1; j <= num; j++) {
-		res = (res * j);
-	}
-
-	return res;
-}
-
