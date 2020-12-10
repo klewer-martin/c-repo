@@ -15,7 +15,7 @@ int main ( void ) {
         return 1;
 	}
 
-//  This part couts the lengh of the first string
+//  This part counts the length of the first string
 //	and replaces the new line character for a blank space;
     for(i = 0; str1[i] != '\0'; i++)
 		if(str1[i] == '\n')
