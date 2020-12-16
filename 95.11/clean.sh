@@ -1,27 +1,25 @@
-#1/bin/bash
+#!/bin/bash
 
 # Removes every a.out from every subfolder where the 
 # sript is executed;
 
 # Set the filename;
-file="a.out"
+file='a.out'
 
-# Check the file if exist or not;
-if [ -f ./**/"$file" ] 
+# The path where 'file' is gonna be looked for;
+subfolders=./**/$file
+currentdir=./$file
 
-# if exists in any folder then removes it;
-	then
-		rm -v ./**/"$file" 
-		echo "everithing cleaned succesfully "
-
-# also removes it if existes in the current directory;
-elif [ -f "$file" ]
-	then
-		rm -v "$file"
-		echo "everithing cleaned succesfully "
+# First checks  if the file exist in the current directory
+# or in any sub-folder, if exist removes it from everywhere;
+if [ -e $currentdir ] || [ -e $subfolders ];
+then
+		rm -v -f ./**/"$file" 
+		rm -v -f "$file"
+		echo "everithing cleaned succesfully"
 
 # if doesn't exist then does nothing;
 else
-		echo "everything seems clean "
-		echo "there is nothing to do "
+		echo "everything seems clean"
+		echo "there is nothing to do"
 fi
