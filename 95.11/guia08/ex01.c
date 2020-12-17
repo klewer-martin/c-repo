@@ -1,44 +1,57 @@
+//	Clones a given string entered as arguments of function main;
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
+#include <string.h>
 
-#define NO_ARG			  1
-#define MAX_ARR_SIZE	100
+#define NO_ARGUMENT		  1
+#define INIT_SIZE		100
 
 typedef enum {
 	OK,
 	ERROR_PROGRAM_INVOCATION,
 	ERROR_NULL_POINTER,
-	ERROR_ALLOC
+	ERROR_ALLOC_MEMORY
 } status_t;
 
 status_t validar_argumentos(int argc, char **argv);
 
 int main (int argc, char * argv[]) {
 
-	char *p;
-	int i;
+	char *dest;
+	size_t i;
 	status_t st;
+
+//	Verify if arguments are right;
 	if((st = validar_argumentos(argc, argv) != OK))
 		return st;
 
-	if((p = (char *)malloc(2 * (argc * MAX_ARR_SIZE))) == NULL)
-			return ERROR_ALLOC;
+//	Allocates memmory in heap of size INIT_SIZE;
+	if((dest = (char *)malloc(INIT_SIZE * sizeof(char))) == NULL)
+			return ERROR_ALLOC_MEMORY;
 
-	for(i = 0; i < (argc - 1); i++, argv++)
-		strlen((char *)argv);
-		(char *)p = ((char *)(*(++argv)));
+//	Assigns 1 to i to avoid the first element of argv, 
+//	which is the program name. Then copies every string of argv
+//	into dest and prints it on stdout;
+	for(i = 1; (int)i < argc; i++) {
+		strcpy(dest, argv[i]);
+	//	Puts a space in between strings, avoiding a blank
+	//	space after first string is printed;
+		if(i != 1) putchar(' ');
+		printf("%s", dest);
+	}
 
-
-	free(p);
-	return 0;
+//	Adds the new line character;
+	putchar('\n');
+	free(dest);
+	return OK;
 }
 
 status_t validar_argumentos(int argc, char **argv) {
-	if(argc == NO_ARG)
+	if(argc == NO_ARGUMENT)
 		return ERROR_PROGRAM_INVOCATION;
+
 	else if(argv == NULL)
 		return ERROR_NULL_POINTER;
-		
-	return 0;
+
+	else return OK;
 }
