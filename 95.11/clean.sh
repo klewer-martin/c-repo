@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Removes every a.out from every subfolder where the 
-# sript is executed;
+# script is executed;
 
 # Set the filename;
 file='a.out'
