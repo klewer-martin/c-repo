@@ -15,8 +15,8 @@ typedef enum {
 
 status_t validar_argumentos(int argc, char **argv);
 
-int main (int argc, char * argv[]) {
-
+int main (int argc, char * argv[]) 
+{
 	char *dest;
 	size_t i;
 	status_t st;
@@ -46,7 +46,8 @@ int main (int argc, char * argv[]) {
 	return OK;
 }
 
-status_t validar_argumentos(int argc, char **argv) {
+status_t validar_argumentos(int argc, char **argv) 
+{
 	if(argc == NO_ARGUMENT)
 		return ERROR_PROGRAM_INVOCATION;
 
