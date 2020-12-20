@@ -19,6 +19,7 @@ NAME
 	readable format.
 
 SYNOPSIS
+	
 	analisis_covid [-in] SOURCE [-out] DEST
 	analisis_covid [-out] DEST [-in] SOURCE
 
@@ -26,7 +27,6 @@ DESCRIPTION
 	Process RAW data from a .csv(comma separated values) file,
 	and export it to another .csv file, if the output file doesn't
 	exist then it creates one with the specified name.
-
 	When you invoke analisis_covid, expects.. to be continued
 
 
