@@ -8,16 +8,16 @@ int main (void)
 	int lower, upper, step;
 	float c, f;
 
-/*	Celsius values;	*/
+/*	Fahrenheit values;	*/
 	lower = 0;
-	upper = 50;
-	step = 2;
+	upper = 100;
+	step = 5;
 
-	printf("Celsius to Fahrenheit\n\n");
+	printf("Fahrenheit to Celsius\n\n");
 
-	for(c = 0; c <= upper; c += step) { 
-		f = (c * 9.0) / 5.0 + 32;
-		printf("%5.1f°C = %5.1f°F\n", c, f);
+	for(f = 0; f <= upper; f += step) { 
+		c = ((f - 32) * 5) / 9;
+		printf("%5.1f°F = %5.1f°C\n", f, c);
 	}
 
 	return 0;
