@@ -3,18 +3,22 @@
 
 #include <stdio.h>
 
-int main( void ) {
-
-	
+int main( void ) 
+{
 	unsigned long bl;
 	bl = 0;
 
-	char aux;
-	while((aux = getchar()) != EOF) {
-		if (aux != ' ') {
+	int c;
+
+	while((c = getchar()) != EOF) {
+		if(c == ' ')
+			bl++;
+		else 
 			bl = 0;
-		} else 
-			b++;
+
+		if(bl <= 1)
+			putchar(c);
 	}
+
 	return 0;
 }
